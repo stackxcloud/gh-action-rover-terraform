@@ -1,0 +1,17 @@
+name: Rover Terraform Visualization
+description: Run Terraform standalone and generate PNG
+inputs:
+  filename:
+    description: Filename for convert SVG to PNG file
+    required: false
+    default: 'rover.png'
+  tfDir:
+    description: Terraform working directory
+    required: false
+    default: './test'
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.tfDir }}
+    - ${{ inputs.filename }}
