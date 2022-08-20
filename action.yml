@@ -5,10 +5,10 @@ inputs:
     description: Filename for convert SVG to PNG file
     required: false
     default: 'rover.png'
-  tfDir:
-    description: Terraform working directory
+  planJSONPath:
+    description: Path to Terraform plan file in JSON format
     required: false
-    default: './examples'
+    default: 'examples/plan.json'
 runs:
   using: "docker"
   image: "Dockerfile"
