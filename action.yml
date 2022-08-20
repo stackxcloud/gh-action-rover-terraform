@@ -4,7 +4,7 @@ inputs:
   directory:
     description: Directory to change to before executing rover
     required: false
-    default: examples
+    default: '.'
   filename:
     description: Filename for convert SVG to PNG file
     required: false
