@@ -1,6 +1,10 @@
 name: Rover Terraform Visualization
 description: Run Terraform standalone and generate PNG
 inputs:
+  directory:
+    description: Directory to change to before executing rover
+    required: false
+    default: examples
   filename:
     description: Filename for convert SVG to PNG file
     required: false
@@ -8,10 +12,11 @@ inputs:
   planPath:
     description: Path to Terraform plan file
     required: false
-    default: 'examples/plan.out'
+    default: 'plan.out'
 runs:
   using: "docker"
   image: "Dockerfile"
   args:
-    - ${{ inputs.tfDir }}
+    - ${{ inputs.directory }}
     - ${{ inputs.filename }}
+    - ${{ inputs.planPath }}
