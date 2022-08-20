@@ -18,5 +18,5 @@ runs:
   image: "Dockerfile"
   args:
     - ${{ inputs.directory }}
-    - ${{ inputs.filename }}
     - ${{ inputs.planPath }}
+    - ${{ inputs.filename }}
