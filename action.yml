@@ -13,6 +13,10 @@ inputs:
     description: Path to Terraform plan file
     required: false
     default: 'plan.out'
+  resolution:
+    description: Resolution of PNG from SVG
+    required: false
+    default: '2160'
 runs:
   using: "docker"
   image: "Dockerfile"
@@ -20,3 +24,4 @@ runs:
     - ${{ inputs.directory }}
     - ${{ inputs.planPath }}
     - ${{ inputs.filename }}
+    - ${{ inputs.resolution }}
